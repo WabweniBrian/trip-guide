@@ -1,5 +1,4 @@
-import { BiCheck, BiEdit, BiEditAlt } from "react-icons/bi";
-import { FaCheckCircle, FaCheckDouble, FaPlusCircle } from "react-icons/fa";
+import { FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 
 const ProfileCompletion = () => {
   return (

@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useRef } from "react";
-import { dataStore, setIsLoading } from "../features/dataSlice";
+import { setIsLoading } from "../features/dataSlice";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -11,8 +11,6 @@ const CarDetails = () => {
   const dispatch = useDispatch();
 
   const [car, setCar] = useState({});
-
-  const { loading } = useSelector(dataStore);
 
   const fetchCar = async () => {
     dispatch(setIsLoading(true));

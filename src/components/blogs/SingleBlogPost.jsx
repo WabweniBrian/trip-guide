@@ -1,4 +1,3 @@
-import { lazy } from "react";
 import { Link } from "react-router-dom";
 const SingleBlogPost = ({
   id,
