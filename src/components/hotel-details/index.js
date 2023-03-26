@@ -1,0 +1,11 @@
+export { default as AddReview } from "./AddReview";
+export { default as Amenities } from "./Amenities";
+export { default as Description } from "./Description";
+export { default as Features } from "./Features";
+export { default as HotelFeatures } from "./HotelFeatures";
+export { default as MoreHotels } from "./MoreHotels";
+export { default as PriceDetails } from "./PriceDetails";
+export { default as Reviews } from "./Reviews";
+export { default as RoomPrice } from "./RoomPrice";
+export { default as RoomSelections } from "./RoomSelections";
+export { default as Trending } from "./Trending";

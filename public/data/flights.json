@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Emirate",
+    "price": 538.38,
+    "image": "/images/flights/emirates.png"
+  },
+  {
+    "id": 2,
+    "name": "United",
+    "price": 538.38,
+    "image": "/images/flights/united.png"
+  },
+  {
+    "id": 3,
+    "name": "Hawaiian",
+    "price": 538.38,
+    "image": "/images/flights/hawaiian.png"
+  },
+  {
+    "id": 4,
+    "name": "Alaska",
+    "price": 538.38,
+    "image": "/images/flights/alaska.png"
+  },
+  {
+    "id": 5,
+    "name": "Southwest",
+    "price": 538.38,
+    "image": "/images/flights/southwest.png"
+  },
+  {
+    "id": 6,
+    "name": "Singapore",
+    "price": 538.38,
+    "image": "/images/flights/singapore.png"
+  },
+  {
+    "id": 7,
+    "name": "Ryanair",
+    "price": 538.38,
+    "image": "/images/flights/ryanair.png"
+  },
+  {
+    "id": 8,
+    "name": "Spirit",
+    "price": 538.38,
+    "image": "/images/flights/spirit.png"
+  },
+  {
+    "id": 9,
+    "name": "Delta",
+    "price": 538.38,
+    "image": "/images/flights/delta.png"
+  },
+  {
+    "id": 10,
+    "name": "China-southern",
+    "price": 538.38,
+    "image": "/images/flights/china-southern.png"
+  },
+  {
+    "id": 11,
+    "name": "American-airlines",
+    "price": 538.38,
+    "image": "/images/flights/american-airlines.png"
+  },
+  {
+    "id": 12,
+    "name": "Airfrance",
+    "price": 538.38,
+    "image": "/images/flights/airfrance.png"
+  },
+  {
+    "id": 13,
+    "name": "Lufthansa",
+    "price": 538.38,
+    "image": "/images/flights/lufthansa.png"
+  },
+  {
+    "id": 14,
+    "name": "British-airways",
+    "price": 538.38,
+    "image": "/images/flights/british-airways.png"
+  }
+]

@@ -1,13 +1,247 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Nunito&family=Nunito+Sans:wght@400;600&family=Poppins:ital,wght@0,400;0,500;1,300;1,400&family=Questrial&family=Raleway&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Testing on phone offline */
+@font-face {
+  font-family: myFont;
+  src: url("../public/Questrial-Regular.ttf") format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  @apply scroll-smooth;
+}
+
+*::-webkit-scrollbar {
+  @apply w-[5px] h-[5px];
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded bg-slate-400;
+}
+
+*::-webkit-scrollbar-track {
+  @apply !bg-transparent;
+}
+
+body {
+  @apply font-questrial bg-main-bg text-slate-700 dark:bg-main-dark dark:text-slate-300;
+  font-family: myFont;
+}
+
+/* General styles */
+p,
+a,
+svg {
+  @apply text-muted;
+}
+
+a.btn {
+  @apply opacity-100;
+}
+
+footer a {
+  @apply text-sm transition-a;
+}
+
+footer a:hover {
+  @apply ml-2 text-primary;
+}
+
+.heading {
+  @apply font-bold text-2xl capitalize;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  @apply p-4 bg-white border rounded-lg dark:bg-card-dark dark:border-dark;
+}
+
+.card-bordered {
+  @apply border dark:border-dark;
+}
+
+.btn {
+  @apply px-4 py-[0.35rem] rounded-lg transition-a sm:cursor-pointer capitalize flex-shrink-0;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-[#5f6fe6] shadow-md shadow-primary/60;
+}
+
+.btn-secondary {
+  @apply bg-secondaryBlue text-white hover:bg-[#3068f6];
+}
+
+.icon-box {
+  @apply grid flex-shrink-0 rounded-full w-9 h-9 place-items-center text-muted hover:bg-slate-200 dark:hover:bg-hover-color-dark transition-a sm:cursor-pointer;
+}
+
+/* Back to top button */
+.back-to-top-btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-to-top-btn.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+a.active {
+  @apply relative text-primary before:absolute before:w-full before:h-[2px] before:bg-primary before:left-0 before:-bottom-[0.85rem];
+}
+
+/* Modals*/
+.modal {
+  @apply fixed top-0 left-0 z-20 w-full h-full transition-transform duration-300 opacity-0 pointer-events-none bg-black/50 lg:static lg:opacity-100 lg:pointer-events-auto lg:bg-transparent;
+}
+
+.dialog {
+  @apply absolute left-0 px-2 top-0 max-w-[250px] lg:overflow-hidden overflow-auto lg:hover:overflow-auto w-full h-full bg-white dark:bg-card-dark -translate-x-[500px] transition-transform lg:fixed lg:translate-x-0 lg:border-r dark:border-dark;
+}
+
+/* Filter dialog and modal */
+.filter-modal {
+  @apply fixed w-full h-full top-0 left-0 bg-black/50 z-50 opacity-0 pointer-events-none transition-opacity md:static md:opacity-100 md:pointer-events-auto md:bg-transparent;
+}
+
+.filter-dialog {
+  @apply absolute  p-3 md:p-0 bg-white dark:bg-card-dark h-screen max-w-[300px] -translate-x-[500px] w-full max-h-screen overflow-auto transition-transform md:static md:max-w-full md:translate-x-0 md:max-h-fit md:h-fit md:bg-main-bg md:dark:!bg-main-dark;
+}
+
+.modal.open,
+.filter-modal.open,
+.dialog.open,
+.filter-dialog.open {
+  @apply translate-x-0 opacity-100 pointer-events-auto;
+}
+
+/* Check box & radio box */
+.input-check label,
+.input-radio label {
+  @apply relative cursor-pointer flex items-center text-slate-500 select-none;
+}
+
+.input-check input[type="checkbox"],
+.input-radio input[type="radio"] {
+  @apply cursor-pointer opacity-0 absolute;
+}
+
+.input-check label::before {
+  content: "";
+  @apply w-4 h-4 mr-2 rounded border border-primary;
+}
+
+.input-check input[type="checkbox"]:checked + label::before {
+  content: "✔";
+  @apply grid place-items-center text-slate-100 text-[0.7rem] bg-primary;
+}
+
+.input-radio label::before {
+  content: "";
+  @apply w-4 h-4 mr-2 rounded-full border border-primary;
+}
+.input-radio label::after {
+  content: "";
+  @apply absolute w-2 h-2 top-1/2 left-0 -translate-y-1/2 scale-0 ml-[0.25rem] bg-primary transition-a rounded-full;
+}
+
+.input-radio input[type="radio"]:checked + label::after {
+  @apply -translate-y-1/2 scale-100;
+}
+
+/* Loader */
+.loader {
+  @apply w-20 h-20 border-4 border-primary rounded-full;
+  border-block-start-color: transparent;
+  animation: rotate 1s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------------------PAGINATION---------------------- */
+.wb-pagination {
+  @apply flex-align-center mt-4 w-full px-4 select-none;
+}
+
+.wb-pagination::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.wb-pagination .pagination-item {
+  @apply p-2;
+}
+
+.wb-pagination .pagination-item .pagination-link {
+  @apply text-inherit w-8 h-8 grid place-items-center mx-3 text-sm;
+}
+
+.wb-pagination .prev,
+.wb-pagination .next {
+  @apply inline-flex text-primary;
+}
+
+.wb-pagination .prev {
+  @apply mr-4;
+}
+.wb-pagination .next {
+  @apply ml-4;
+}
+
+.disabled {
+  @apply opacity-40;
+}
+
+.wb-pagination .pagination-item.pagination-link-active .pagination-link {
+  @apply bg-primary rounded-full text-white shadow-md shadow-primary/60;
+}
+
+@media (max-width: 640px) {
+  .wb-pagination {
+    @apply max-w-[320px] w-full overflow-auto;
+  }
+}
+
+/* React Tabs */
+.react-tabs__tab-list {
+  @apply !border-slate-300 dark:!border-hover-color-dark;
+}
+
+.react-tabs__tab {
+  @apply !border-0;
+}
+
+.react-tabs__tab--selected {
+  @apply !bg-transparent !border-b-2 !border-solid !border-primary !text-inherit;
+}
+
+.react-tabs__tab:focus:after {
+  @apply !hidden;
+}
+
+/* Skelton animation */
+.skeleton {
+  @apply animate-pulse;
+}
+
+/* Login & Sign-up heading didvider */
+.divider {
+  @apply relative before:absolute before:w-[45%] before:h-[2px] before:top-1/2 before:bg-slate-300 before:left-0  dark:before:bg-dark;
+  @apply relative after:absolute after:w-[45%] after:h-[2px] after:top-1/2 after:bg-gray-300 after:right-0 dark:after:bg-dark;
+}
+
+/* Semi Circle */
+.semi-circle {
+  border-block-end-color: transparent;
 }
